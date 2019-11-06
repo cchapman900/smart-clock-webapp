@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import {Cell, Grid} from "react-foundation";
 
 import {calculateFeelsLikeTemp} from '../../utils/weather';
+import testWeatherData from '../../data/test-weather.json'
+import {WeatherContext} from "../../contexts/weather";
 
 const CurrentWeather = (props) => {
 
@@ -9,6 +11,7 @@ const CurrentWeather = (props) => {
    * INITIALIZATION
    ****************************************/
 
+  const [forecast, setForecast] = useState(null);
   const [currentTemp, setCurrentTemp] = useState(null);
   const [feelsLikeTemp, setFeelsLikeTemp] = useState(null);
   const [weatherIcon, setWeatherIcon] = useState(null);
@@ -17,41 +20,13 @@ const CurrentWeather = (props) => {
    * LIFECYCLE METHODS
    ****************************************/
 
-  const updateWeather = () => {
-    getDailyWeatherForecast()
-      .then((data) => {
-        // console.log(data)
-        if (data) {
-          setCurrentTemp(Math.round(data.main.temp));
-          setFeelsLikeTemp(Math.round(calculateFeelsLikeTemp(data.main.temp, data.wind.speed, data.main.humidity)));
-          setWeatherIcon(data.weather[0].icon);
-        }
-      })
-  };
-
   useEffect( () => {
-    updateWeather();
-    setInterval(updateWeather,600000)
-  }, []);
-
-  /****************************************
-   * HTTP METHODS
-   ****************************************/
-
-  const getDailyWeatherForecast = async () => {
-    const apiUri = `https://api.openweathermap.org/data/2.5/weather?zip=${process.env.REACT_APP_ZIP_CODE}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=imperial`;
-    return fetch(apiUri)
-      .then((response) => {
-        if (response.status === 200) {
-          return response.json()
-        } else {
-          console.error(`Could not fetch weather data. Got: ${response.status}`)
-        }
-      })
-      .catch(error => {
-        console.error(error)
-      })
-  };
+    if (props.forecast.currently) {
+      setCurrentTemp(Math.round(props.forecast.currently.temperature))
+      setFeelsLikeTemp(Math.round(props.forecast.currently.apparentTemperature))
+      setWeatherIcon(props.forecast.currently.icon)
+    }
+  }, [props.forecast]);
 
   /*******************************************
    * STYLES

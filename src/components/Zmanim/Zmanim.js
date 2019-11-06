@@ -9,7 +9,7 @@ const Zmanim = () => {
   const [event, setEvent] = useState(null);
 
   useEffect(() => {
-    const today = moment(Date.now()).format('Y-MM-DD')
+    const today = moment(Date.now()).format('Y-MM-DD');
     if (today in zmanimData) {
       setEvent(zmanimData[today]);
     }
@@ -41,7 +41,7 @@ const Zmanim = () => {
           {event.candleLighting}
         </Cell>
         <Cell small={4}>
-          <img src={'/images/candle.svg'}/>
+          <img src={'/images/candle.svg'} alt={'candle'}/>
         </Cell>
       </Grid>
     )
@@ -54,7 +54,7 @@ const Zmanim = () => {
           {event.nighfall}
         </Cell>
         <Cell small={4}>
-          <img src={'/images/weather-icons/wi-stars.svg'}/>
+          <img src={'/images/weather-icons/wi-stars.svg'} alt={'stars'}/>
         </Cell>
       </Grid>
     )

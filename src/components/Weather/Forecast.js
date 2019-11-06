@@ -2,6 +2,10 @@ import React, {useState, useEffect} from 'react';
 import * as V from 'victory';
 import { VictoryChart, VictoryTheme, VictoryLine } from 'victory';
 import {Cell, Grid} from "react-foundation";
+import moment from 'moment';
+
+
+import testWeatherData from '../../data/test-weather.json';
 
 
 const Forecast = (props) => {
@@ -16,44 +20,18 @@ const Forecast = (props) => {
    * LIFECYCLE METHODS
    ****************************************/
 
-  const updateWeather = () => {
-    getHourlyWeatherForecast()
-      .then((data) => {
-        if (data) {
-          let temps = [];
-          data.list.forEach((hour) => {
-            const hourlyTemp = {x: new Date(hour.dt_txt), y: hour.main.temp}
-            temps.push(hourlyTemp)
-          });
-          setHourlyTemps(temps);
-        }
-      })
-  };
-
   useEffect( () => {
-    updateWeather();
-    setInterval(updateWeather,600000)
-  }, []);
-
-
-  /****************************************
-   * HTTP METHODS
-   ****************************************/
-
-  const getHourlyWeatherForecast = async () => {
-    const apiUri = `https://api.openweathermap.org/data/2.5/forecast?zip=${process.env.REACT_APP_ZIP_CODE}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=imperial`;
-    return fetch(apiUri)
-      .then((response) => {
-        if (response.status === 200) {
-          return response.json()
-        } else {
-          console.error(`Could not fetch weather data. Got: ${response.status}`)
-        }
-      })
-      .catch(error => {
-        console.error(error)
-      })
-  };
+    console.log(props.forecast);
+    if (props.forecast.hourly) {
+      let temps = [];
+      props.forecast.hourly.data.forEach((hour) => {
+        const time = moment.unix(hour.time);
+        const hourlyTemp = {x: new Date(time), y: hour.temperature}
+        temps.push(hourlyTemp)
+      });
+      setHourlyTemps(temps);
+    }
+  }, [props.forecast]);
 
 
   /****************************************

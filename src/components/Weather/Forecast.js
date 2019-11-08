@@ -21,8 +21,7 @@ const Forecast = (props) => {
    ****************************************/
 
   useEffect( () => {
-    console.log(props.forecast);
-    if (props.forecast.hourly) {
+    if (props.forecast) {
       let temps = [];
       props.forecast.hourly.data.forEach((hour) => {
         const time = moment.unix(hour.time);

@@ -12,7 +12,7 @@ const Weather = () => {
    ****************************************/
 
   const getWeatherForecast = async () => {
-    const apiUri = `http://localhost:3001/weather?lat=${process.env.REACT_APP_LAT}&long=${process.env.REACT_APP_LONG}`;
+    const apiUri = `http://192.168.0.121:3010/weather?lat=${process.env.REACT_APP_LAT}&long=${process.env.REACT_APP_LONG}`;
     return fetch(apiUri)
       .then((response) => {
         if (response.status === 200) {
@@ -30,8 +30,7 @@ const Weather = () => {
   /*********************************************
    * INITIALIZATION
    *********************************************/
-  const initialForecast = async () => await getWeatherForecast();
-  const [forecast, setForecast] = useState(initialForecast);
+  const [forecast, setForecast] = useState(null);
 
   /****************************************
    * LIFECYCLE METHODS

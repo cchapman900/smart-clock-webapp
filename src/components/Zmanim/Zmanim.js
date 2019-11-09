@@ -108,7 +108,7 @@ const Zmanim = () => {
 
     if (event.type.includes('shabbosEvening')) {
       eventContent = renderCandleLighting()
-    } else if (event.type.includes('shabbosEvening')) {
+    } else if (event.type.includes('shabbosDay')) {
       eventContent = renderNightfall()
     }
 

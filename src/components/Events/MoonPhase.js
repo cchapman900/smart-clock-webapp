@@ -20,7 +20,6 @@ const MoonPhase = (props) => {
   useEffect( () => {
     if (weatherContext.forecast) {
       const moonPhase = Math.round(weatherContext.forecast.daily.data[0].moonPhase * 27);
-      console.log(moonPhase);
       setMoonPhaseIcon(moonPhase)
     }
   }, [weatherContext.forecast ? weatherContext.forecast.daily.data[0].time : null]);
@@ -59,7 +58,6 @@ const MoonPhase = (props) => {
    * RENDER METHODS
    ****************************************/
 
-  console.log('moon');
   return (
     <Grid>
       <Cell small={3}/>

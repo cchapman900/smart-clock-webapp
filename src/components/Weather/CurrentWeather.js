@@ -23,7 +23,6 @@ const CurrentWeather = (props) => {
 
   useEffect( () => {
     if (weatherContext.forecast) {
-      console.log(weatherContext.forecast)
       setCurrentTemp(Math.round(weatherContext.forecast.currently.temperature));
       setFeelsLikeTemp(Math.round(weatherContext.forecast.currently.apparentTemperature));
       setWeatherIcon(weatherContext.forecast.currently.icon)

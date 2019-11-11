@@ -4,6 +4,7 @@ import moment from 'moment';
 import zmanimData from '../../data/zmanim'
 import {Cell, Grid} from "react-foundation";
 import testSunData from "../../data/test-sun-data";
+import MoonPhase from "./MoonPhase";
 
 const Zmanim = () => {
 
@@ -44,6 +45,7 @@ const Zmanim = () => {
 
   const getSunData = async () => {
     const apiUri = `https://api.sunrise-sunset.org/json?lat=${process.env.REACT_APP_LAT}&lng=${process.env.REACT_APP_LONG}&formatted=0`;
+    console.log(apiUri)
     return fetch(apiUri)
       .then((response) => {
         if (response.status === 200) {
@@ -122,7 +124,7 @@ const Zmanim = () => {
   if (event) {
     return renderEvent()
   } else {
-    return null
+    return <MoonPhase/>
   }
 };
 

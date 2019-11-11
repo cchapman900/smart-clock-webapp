@@ -14,20 +14,12 @@ export const WeatherContextProvider = props => {
   const [forecast, setForecast] = useState(null);
 
   /****************************************
-   * LIFECYCLE METHODS
-   ****************************************/
-
-  useEffect( () => {
-    getWeatherForecast();
-    setInterval(getWeatherForecast,1000)
-  }, []);
-
-  /****************************************
    * HTTP METHODS
    ****************************************/
 
   const getWeatherForecast = async () => {
-    // const apiUri = `https://api.openweathermap.org/data/2.5/weather?zip=${process.env.REACT_APP_ZIP_CODE}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=imperial`;
+    // const apiUri = `http://192.168.0.121:3010/weather?lat=${process.env.REACT_APP_LAT}&long=${process.env.REACT_APP_LONG}`;
+    // console.log(apiUri);
     // return fetch(apiUri)
     //   .then((response) => {
     //     if (response.status === 200) {
@@ -39,10 +31,29 @@ export const WeatherContextProvider = props => {
     //   .catch(error => {
     //     console.error(error)
     //   })
-    setForecast(forecast + 1);
-    console.log(forecast);
     return testWeatherData;
   };
+
+  /****************************************
+   * LIFECYCLE METHODS
+   ****************************************/
+
+  useEffect( () => {
+    const getInitialForecast = async () => {
+      const initialForecast = await getWeatherForecast();
+      setForecast(initialForecast)
+    };
+    getInitialForecast();
+
+    const interval = setInterval(async () => {
+      const updatedForecast = await getWeatherForecast();
+      setForecast(updatedForecast);
+    },600000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
 
   /*********************************************

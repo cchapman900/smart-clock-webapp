@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {Cell, Grid} from "react-foundation";
 
 import {calculateFeelsLikeTemp} from '../../utils/weather';
@@ -11,7 +11,8 @@ const CurrentWeather = (props) => {
    * INITIALIZATION
    ****************************************/
 
-  const [forecast, setForecast] = useState(null);
+  const weatherContext = useContext(WeatherContext);
+
   const [currentTemp, setCurrentTemp] = useState(null);
   const [feelsLikeTemp, setFeelsLikeTemp] = useState(null);
   const [weatherIcon, setWeatherIcon] = useState(null);
@@ -21,12 +22,13 @@ const CurrentWeather = (props) => {
    ****************************************/
 
   useEffect( () => {
-    if (props.forecast) {
-      setCurrentTemp(Math.round(props.forecast.currently.temperature))
-      setFeelsLikeTemp(Math.round(props.forecast.currently.apparentTemperature))
-      setWeatherIcon(props.forecast.currently.icon)
+    if (weatherContext.forecast) {
+      console.log(weatherContext.forecast)
+      setCurrentTemp(Math.round(weatherContext.forecast.currently.temperature));
+      setFeelsLikeTemp(Math.round(weatherContext.forecast.currently.apparentTemperature));
+      setWeatherIcon(weatherContext.forecast.currently.icon)
     }
-  }, [props.forecast]);
+  }, [weatherContext.forecast]);
 
   /*******************************************
    * STYLES

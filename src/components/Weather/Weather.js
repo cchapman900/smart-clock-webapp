@@ -7,30 +7,31 @@ import testWeatherData from "../../data/test-weather";
 
 const Weather = () => {
 
+  /*********************************************
+   * INITIALIZATION
+   *********************************************/
+  const [forecast, setForecast] = useState(null);
+
   /****************************************
    * HTTP METHODS
    ****************************************/
 
   const getWeatherForecast = async () => {
-    const apiUri = `http://192.168.0.121:3010/weather?lat=${process.env.REACT_APP_LAT}&long=${process.env.REACT_APP_LONG}`;
-    return fetch(apiUri)
-      .then((response) => {
-        if (response.status === 200) {
-          return response.json()
-        } else {
-          console.error(`Could not fetch weather data. Got: ${response.status}`)
-        }
-      })
-      .catch(error => {
-        console.error(error)
-      })
-    // return testWeatherData;
+    // const apiUri = `http://192.168.0.121:3010/weather?lat=${process.env.REACT_APP_LAT}&long=${process.env.REACT_APP_LONG}`;
+    // console.log(apiUri);
+    // return fetch(apiUri)
+    //   .then((response) => {
+    //     if (response.status === 200) {
+    //       return response.json()
+    //     } else {
+    //       console.error(`Could not fetch weather data. Got: ${response.status}`)
+    //     }
+    //   })
+    //   .catch(error => {
+    //     console.error(error)
+    //   })
+    return testWeatherData;
   };
-
-  /*********************************************
-   * INITIALIZATION
-   *********************************************/
-  const [forecast, setForecast] = useState(null);
 
   /****************************************
    * LIFECYCLE METHODS
@@ -47,7 +48,7 @@ const Weather = () => {
     const interval = setInterval(async () => {
       const updatedForecast = await getWeatherForecast();
       setForecast(updatedForecast);
-    },180000);
+    },600000);
 
     return () => {
       clearInterval(interval);
@@ -61,10 +62,10 @@ const Weather = () => {
   return (
     <Grid>
       <Cell small={5}>
-        <CurrentWeather forecast={forecast}/>
+        <CurrentWeather/>
       </Cell>
       <Cell small={7}>
-        <Forecast forecast={forecast}/>
+        <Forecast/>
       </Cell>
     </Grid>
   )

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import * as V from 'victory';
 import { VictoryChart, VictoryTheme, VictoryLine } from 'victory';
 import {Cell, Grid} from "react-foundation";
@@ -6,6 +6,7 @@ import moment from 'moment';
 
 
 import testWeatherData from '../../data/test-weather.json';
+import {WeatherContext} from "../../contexts/weather";
 
 
 const Forecast = (props) => {
@@ -14,6 +15,7 @@ const Forecast = (props) => {
    * INITIALIZATION
    ****************************************/
 
+  const weatherContext = useContext(WeatherContext);
   const [hourlyTemps, setHourlyTemps] = useState([]);
 
   /****************************************
@@ -21,16 +23,16 @@ const Forecast = (props) => {
    ****************************************/
 
   useEffect( () => {
-    if (props.forecast) {
+    if (weatherContext.forecast) {
       let temps = [];
-      props.forecast.hourly.data.forEach((hour) => {
+      weatherContext.forecast.hourly.data.forEach((hour) => {
         const time = moment.unix(hour.time);
         const hourlyTemp = {x: new Date(time), y: hour.temperature}
         temps.push(hourlyTemp)
       });
       setHourlyTemps(temps);
     }
-  }, [props.forecast]);
+  }, [weatherContext.forecast ? weatherContext.forecast.hourly.data[0] : null]);
 
 
   /****************************************

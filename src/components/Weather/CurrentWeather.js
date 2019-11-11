@@ -1,9 +1,9 @@
 import React, {useState, useEffect, useContext} from 'react';
 import {Cell, Grid} from "react-foundation";
 
-import {calculateFeelsLikeTemp} from '../../utils/weather';
 import testWeatherData from '../../data/test-weather.json'
 import {WeatherContext} from "../../contexts/weather";
+import {temperatureDisplay} from '../../utils/weather';
 
 const CurrentWeather = (props) => {
 
@@ -41,17 +41,18 @@ const CurrentWeather = (props) => {
 
   const currentTempStyle = {
     'lineHeight': '80%',
-    'fontSize': '150px',
+    'fontSize': '100px',
     'marginBottom': '15px'
   };
 
   const feelsLikeTempTextStyle = {
     'verticalAlign': 'top',
     'fontSize': '24px',
-    marginLeft: -70
+    marginLeft: -10
   };
 
   const feelsLikeTempNumberStyle = {
+    paddingLeft: 5,
     'lineHeight': '80%',
     'fontSize': '74px'
   };
@@ -66,21 +67,16 @@ const CurrentWeather = (props) => {
    * RENDER METHODS
    ****************************************/
 
-  const renderTempFormat = (temp) => {
-    return (
-      <span>{temp}&#176;</span>
-    )
-  };
 
   const renderTemp = () => {
     return (
       <div>
         <Grid>
           <Cell style={currentTempStyle}>
-            {renderTempFormat(currentTemp)}
+            {currentTemp}°
           </Cell>
           <Cell style={{textAlign: 'left'}}>
-            <span style={feelsLikeTempTextStyle}>feels like</span><span style={feelsLikeTempNumberStyle}> {renderTempFormat(feelsLikeTemp)}</span>
+            <span style={feelsLikeTempTextStyle}>feels like</span><span style={feelsLikeTempNumberStyle}>{temperatureDisplay(feelsLikeTemp)}</span>
           </Cell>
         </Grid>
       </div>

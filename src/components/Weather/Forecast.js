@@ -5,6 +5,7 @@ import moment from 'moment';
 
 import {WeatherContext} from "../../contexts/weather";
 
+import {temperatureDisplay} from '../../utils/weather';
 
 const Forecast = (props) => {
 
@@ -130,7 +131,7 @@ const Forecast = (props) => {
           <img src={`/images/weather-icons/${day.icon}.svg`}/>
         </Cell>
         <Cell small={3}/>
-        <Cell>{Math.round(day.temperatureHigh)}&#176; | {Math.round(day.temperatureLow)}&#176;</Cell>
+        <Cell>{temperatureDisplay(Math.round(day.temperatureHigh))} | {temperatureDisplay(Math.round(day.temperatureLow))}</Cell>
         {/*<Cell>*/}
         {/*  {precipIcon}{precip}"*/}
         {/*</Cell>*/}
@@ -152,7 +153,7 @@ const Forecast = (props) => {
     )
   };
 
-  const renderTemperatureGraph = () => {
+  const renderForecastGraph = () => {
     if (hourlyTemps[0]) {
       return (
         <VictoryChart
@@ -164,16 +165,14 @@ const Forecast = (props) => {
         >
           <VictoryArea
             style={{
-              data: {stroke: '#8CABBD', fill: "#BADDF2"},
-              parent: {border: "1px solid #ccc"}
+              data: {stroke: '#8CABBD', fill: "#BADDF2"}
             }}
             interpolation="natural"
             data={hourlyPrecipProbability}
           />
           <VictoryLine
             style={{
-              data: {stroke: "#FF9993"},
-              parent: {border: "1px solid #ccc"}
+              data: {stroke: "#FF9993", strokeWidth: 3}
             }}
             interpolation="natural"
             data={hourlyTemps}
@@ -207,7 +206,7 @@ const Forecast = (props) => {
       <div style={{marginLeft: 50}}>
       {renderDaysSummary()}
       </div>
-      {renderTemperatureGraph()}
+      {renderForecastGraph()}
     </div>
   )
 };

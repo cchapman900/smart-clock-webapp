@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const calculateFeelsLikeTemp = (temp, windSpeed = null, humidity = null) => {
   if (temp <= 50) {
     return calculateWindChill(temp, windSpeed)
@@ -26,4 +28,39 @@ const calculateHeatIndex = (temp, humidity) => {
   }
   return heatIndex;
 
+};
+
+export const temperatureDisplay = (temp, showDegrees = true) => {
+  let color;
+  if (temp <= 0) {
+    color = '#E5B8ED';
+  } else if (temp > 0 && temp <= 10) {
+    color = '#d2ceee';
+  } else if (temp > 10 && temp <= 20) {
+    color = '#c6d4ef';
+  } else if (temp > 20 && temp <= 30) {
+    color = '#ccdbf1';
+  } else if (temp > 30 && temp <= 40) {
+    color = '#B5DDF1'
+  } else if (temp > 40 && temp <= 50) {
+    color = '#B7EAF0';
+  } else if (temp > 50 && temp <= 60) {
+    color = '#B9F5B9';
+  } else if (temp > 60 && temp <= 70) {
+    color = '#D7F3B8';
+  } else if (temp > 70 && temp <= 80) {
+    color = '#F1E3BE';
+  } else if (temp > 80 && temp <= 90) {
+    color = '#EED5BB';
+  } else if (temp > 90 && temp <= 100) {
+    color = '#ECC2B8';
+  } else {
+    color = '#ECB8B8'
+  }
+  const style = {
+    color: color
+  };
+  return (
+    <span style={style}>{temp}{showDegrees ? '°' : ''}</span>
+  )
 };

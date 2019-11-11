@@ -94,13 +94,26 @@ const Forecast = (props) => {
    * STYLES
    ****************************************/
 
-  const graphStyle = {
-    height: 120
+  const forecastStyle = {
+    marginTop: 15
   };
 
   const lineChartStyle = {
     data: { stroke: "#c43a31" },
     parent: { border: "1px solid #ccc"}
+  };
+
+  const dayOfWeekStyle = {
+    'marginTop': '5px',
+    'fontSize': '28px',
+    'lineHeight': '100%'
+  };
+
+  const dayOfWeekHiLoStyle = {
+    'fontSize': '16px',
+    'marginTop': '-5px',
+    'paddingBottom': '5px',
+    'lineHeight': '100%'
   };
 
 
@@ -123,15 +136,17 @@ const Forecast = (props) => {
 
     return (
       <Grid style={{borderRight: 'solid .5px #666', borderBottom: 'solid .5px #666'}}>
-        <Cell small={12}>
-          {moment.unix(day.time).format('ddd')}
+        <Cell small={12} style={dayOfWeekStyle}>
+          <strong>{moment.unix(day.time).format('ddd')}</strong>
         </Cell>
-        <Cell small={3}/>
-        <Cell small={6}>
+        <Cell small={1}/>
+        <Cell small={10}>
           <img src={`/images/weather-icons/${day.icon}.svg`}/>
         </Cell>
         <Cell small={3}/>
-        <Cell>{temperatureDisplay(Math.round(day.temperatureHigh))} | {temperatureDisplay(Math.round(day.temperatureLow))}</Cell>
+        <Cell style={dayOfWeekHiLoStyle}>
+          {temperatureDisplay(Math.round(day.temperatureHigh))} | {temperatureDisplay(Math.round(day.temperatureLow))}
+        </Cell>
         {/*<Cell>*/}
         {/*  {precipIcon}{precip}"*/}
         {/*</Cell>*/}
@@ -157,7 +172,7 @@ const Forecast = (props) => {
     if (hourlyTemps[0]) {
       return (
         <VictoryChart
-          height={150}
+          height={130}
           theme={VictoryTheme.material}
           scale={{x: 'time'}}
           padding={{top:0, bottom: 80, left: 32}}
@@ -165,7 +180,7 @@ const Forecast = (props) => {
         >
           <VictoryArea
             style={{
-              data: {stroke: '#8CABBD', fill: "#BADDF2"}
+              data: {stroke: '#8CABBD', fill: "#9bcaf2"}
             }}
             interpolation="natural"
             data={hourlyPrecipProbability}
@@ -202,7 +217,7 @@ const Forecast = (props) => {
   };
 
   return (
-    <div style={graphStyle}>
+    <div style={forecastStyle}>
       <div style={{marginLeft: 50}}>
       {renderDaysSummary()}
       </div>

@@ -41,7 +41,7 @@ const CurrentWeather = (props) => {
 
   const currentTempStyle = {
     'lineHeight': '80%',
-    'fontSize': '100px',
+    'fontSize': '160px',
     'marginBottom': '15px'
   };
 

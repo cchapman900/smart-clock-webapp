@@ -17,7 +17,7 @@ const Clock = () => {
 
   const dateStyle = {
     'marginTop': '15px',
-    'fontSize': '45px',
+    'fontSize': '40px',
     'lineHeight': '80%'
   };
 

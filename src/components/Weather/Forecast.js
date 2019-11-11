@@ -43,7 +43,6 @@ const Forecast = (props) => {
       let minTemp = 200;
       let maxTemp = -100;
 
-      console.log(hourlyData[0]);
       hourlyData.forEach((hour) => {
 
         if (hour.temperature > maxTemp) {
@@ -65,15 +64,15 @@ const Forecast = (props) => {
 
       setMinWeeklyTemp(minTemp);
       setMaxWeeklyTemp(maxTemp);
-      setHourlyTemps(temps);
-      setHourlyPrecipProbability(precipProbs.map((prob) => {
-
+      setHourlyTemps(temps)
+      const normalizedPrecipProbs = precipProbs.map((prob) => {
         const newProb = prob.y * (maxTemp - minTemp) + minTemp;
         return {
           x: prob.x,
-          y: newProb
+          y: prob.y === null ? null : newProb
         }
-      }));
+      });
+      setHourlyPrecipProbability(normalizedPrecipProbs);
     }
   }, [weatherContext.forecast ? weatherContext.forecast.hourly.data[0] : null]);
 
@@ -84,6 +83,7 @@ const Forecast = (props) => {
         const dailyWeather = weatherContext.forecast.daily.data[i];
         newDailyForecast.push(dailyWeather);
       }
+      console.log(newDailyForecast);
       setDailyForecast(newDailyForecast);
     }
   }, [weatherContext.forecast ? weatherContext.forecast.daily.data[0] : null]);
@@ -108,6 +108,14 @@ const Forecast = (props) => {
    ****************************************/
 
   const renderDaySummary = (day) => {
+
+    let precip = '0.00';
+    if (day.precipAccumulation) {
+      precip = day.precipAccumulation
+    } else if (day.precipIntensity) {
+      precip = day.precipIntensity
+    }
+
     return (
       <Grid style={{borderRight: 'solid .5px #666'}}>
         <Cell small={12}>
@@ -118,12 +126,13 @@ const Forecast = (props) => {
           <img src={`/images/weather-icons/${day.icon}.svg`}/>
         </Cell>
         <Cell small={3}/>
-        <Cell>{Math.round(day.temperatureHigh)} | {Math.round(day.temperatureLow)}</Cell>
+        <Cell>{Math.round(day.temperatureHigh)}&#176; | {Math.round(day.temperatureLow)}&#176;</Cell>
+        <Cell>{precip}"</Cell>
       </Grid>
     )
   };
 
-  const render3DaySummary = () => {
+  const renderDaysSummary = () => {
     let daySummaries = [];
     dailyForecast.forEach((day) => {
       daySummaries.push(
@@ -141,10 +150,10 @@ const Forecast = (props) => {
     if (hourlyTemps[0]) {
       return (
         <VictoryChart
-          height={170}
+          height={130}
           theme={VictoryTheme.material}
           scale={{x: 'time'}}
-          padding={{top:0, bottom: 80, left: 32, right: 5}}
+          padding={{top:0, bottom: 80, left: 32}}
           domain={{y: [minWeeklyTemp || 0, maxWeeklyTemp || 100] }}
         >
           <VictoryArea
@@ -190,7 +199,7 @@ const Forecast = (props) => {
   return (
     <div style={graphStyle}>
       <div style={{marginLeft: 50}}>
-      {render3DaySummary()}
+      {renderDaysSummary()}
       </div>
       {renderTemperatureGraph()}
     </div>

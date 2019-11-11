@@ -16,6 +16,7 @@ const CurrentWeather = (props) => {
   const [currentTemp, setCurrentTemp] = useState(null);
   const [feelsLikeTemp, setFeelsLikeTemp] = useState(null);
   const [weatherIcon, setWeatherIcon] = useState(null);
+  const [chanceOfPrecip, setChanceOfPrecip] = useState(null);
 
   /****************************************
    * LIFECYCLE METHODS
@@ -26,6 +27,7 @@ const CurrentWeather = (props) => {
       setCurrentTemp(Math.round(weatherContext.forecast.currently.temperature));
       setFeelsLikeTemp(Math.round(weatherContext.forecast.currently.apparentTemperature));
       setWeatherIcon(weatherContext.forecast.currently.icon)
+      // setChanceOfPrecip(weatherContext.forecast.daily.data[0].precipProbability)
     }
   }, [weatherContext.forecast]);
 
@@ -45,12 +47,13 @@ const CurrentWeather = (props) => {
 
   const feelsLikeTempTextStyle = {
     'verticalAlign': 'top',
-    'fontSize': '24px'
+    'fontSize': '24px',
+    marginLeft: -70
   };
 
   const feelsLikeTempNumberStyle = {
     'lineHeight': '80%',
-    'fontSize': '56px'
+    'fontSize': '74px'
   };
 
   const imageStyle = {
@@ -88,6 +91,7 @@ const CurrentWeather = (props) => {
     return(
       <div>
         <img style={imageStyle} src={`/images/weather-icons/${weatherIcon}.svg`}/>
+        {/*{Math.round(chanceOfPrecip * 100)}%*/}
       </div>
     )
   };

@@ -17,13 +17,13 @@ const Clock = () => {
 
   const dateStyle = {
     'marginTop': '15px',
-    'fontSize': '40px',
+    'fontSize': '45px',
     'lineHeight': '80%'
   };
 
   const timeStyle = {
     'marginBottom': '30px',
-    'fontSize': '250px',
+    'fontSize': '220px',
     'lineHeight': '80%'
   };
 

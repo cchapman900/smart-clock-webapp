@@ -110,14 +110,18 @@ const Forecast = (props) => {
   const renderDaySummary = (day) => {
 
     let precip = '0.00';
-    if (day.precipAccumulation) {
-      precip = day.precipAccumulation
-    } else if (day.precipIntensity) {
-      precip = day.precipIntensity
+    let precipIcon;
+    if (day.precipProbability > .1) {
+      if (day.precipAccumulation) {
+        precip = day.precipAccumulation
+        precipIcon = <img width={40} src={`/images/weather-icons/wi-snowflake-cold.svg`} alt={'snow'}/>
+      } else {
+        precipIcon = <img width={40} src={`/images/weather-icons/wi-raindrops.svg`} alt={'rain'}/>
+      }
     }
 
     return (
-      <Grid style={{borderRight: 'solid .5px #666'}}>
+      <Grid style={{borderRight: 'solid .5px #666', borderBottom: 'solid .5px #666'}}>
         <Cell small={12}>
           {moment.unix(day.time).format('ddd')}
         </Cell>
@@ -127,7 +131,9 @@ const Forecast = (props) => {
         </Cell>
         <Cell small={3}/>
         <Cell>{Math.round(day.temperatureHigh)}&#176; | {Math.round(day.temperatureLow)}&#176;</Cell>
-        <Cell>{precip}"</Cell>
+        {/*<Cell>*/}
+        {/*  {precipIcon}{precip}"*/}
+        {/*</Cell>*/}
       </Grid>
     )
   };
@@ -150,7 +156,7 @@ const Forecast = (props) => {
     if (hourlyTemps[0]) {
       return (
         <VictoryChart
-          height={130}
+          height={150}
           theme={VictoryTheme.material}
           scale={{x: 'time'}}
           padding={{top:0, bottom: 80, left: 32}}

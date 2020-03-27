@@ -84,7 +84,6 @@ const Forecast = (props) => {
         const dailyWeather = weatherContext.forecast.daily.data[i];
         newDailyForecast.push(dailyWeather);
       }
-      console.log(newDailyForecast);
       setDailyForecast(newDailyForecast);
     }
   }, [weatherContext.forecast ? weatherContext.forecast.daily.data[0] : null]);

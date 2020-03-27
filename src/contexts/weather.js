@@ -19,7 +19,6 @@ export const WeatherContextProvider = props => {
 
   const getWeatherForecast = async () => {
     const apiUri = `http://192.168.0.121:3010/weather?lat=${process.env.REACT_APP_LAT}&long=${process.env.REACT_APP_LONG}`;
-    console.log(apiUri);
     return fetch(apiUri)
       .then((response) => {
         if (response.status === 200) {

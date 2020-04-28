@@ -1,14 +1,19 @@
 import React, {useState, useEffect} from 'react';
-import { Textfit } from 'react-textfit';
+// import { Textfit } from 'react-textfit';
 import moment from 'moment';
 
 const Clock = () => {
   const [date, setDate] = useState(Date.now());
 
   useEffect(() => {
-    setInterval(() => {
+    const interval = () => {
       setDate(Date.now())
-    })
+    };
+    setInterval(interval);
+
+    return () => {
+      clearInterval(interval)
+    };
   }, []);
 
   /*******************************************

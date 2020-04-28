@@ -75,6 +75,7 @@ const Forecast = (props) => {
       });
       setHourlyPrecipProbability(normalizedPrecipProbs);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [weatherContext.forecast ? weatherContext.forecast.hourly.data[0] : null]);
 
   useEffect( () => {
@@ -86,6 +87,7 @@ const Forecast = (props) => {
       }
       setDailyForecast(newDailyForecast);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [weatherContext.forecast ? weatherContext.forecast.daily.data[0] : null]);
 
 
@@ -97,10 +99,10 @@ const Forecast = (props) => {
     marginTop: 15
   };
 
-  const lineChartStyle = {
-    data: { stroke: "#c43a31" },
-    parent: { border: "1px solid #ccc"}
-  };
+  // const lineChartStyle = {
+  //   data: { stroke: "#c43a31" },
+  //   parent: { border: "1px solid #ccc"}
+  // };
 
   const dayOfWeekStyle = {
     'marginTop': '5px',
@@ -122,16 +124,16 @@ const Forecast = (props) => {
 
   const renderDaySummary = (day) => {
 
-    let precip = '0.00';
-    let precipIcon;
-    if (day.precipProbability > .1) {
-      if (day.precipAccumulation) {
-        precip = day.precipAccumulation
-        precipIcon = <img width={40} src={`/images/weather-icons/wi-snowflake-cold.svg`} alt={'snow'}/>
-      } else {
-        precipIcon = <img width={40} src={`/images/weather-icons/wi-raindrops.svg`} alt={'rain'}/>
-      }
-    }
+    // let precip = '0.00';
+    // let precipIcon;
+    // if (day.precipProbability > .1) {
+    //   if (day.precipAccumulation) {
+    //     precip = day.precipAccumulation;
+    //     precipIcon = <img width={40} src={`/images/weather-icons/wi-snowflake-cold.svg`} alt={'snow'}/>
+    //   } else {
+    //     precipIcon = <img width={40} src={`/images/weather-icons/wi-raindrops.svg`} alt={'rain'}/>
+    //   }
+    // }
 
     return (
       <Grid style={{borderRight: 'solid .5px #666', borderBottom: 'solid .5px #666'}}>
@@ -140,7 +142,7 @@ const Forecast = (props) => {
         </Cell>
         <Cell small={1}/>
         <Cell small={10}>
-          <img src={`/images/weather-icons/${day.icon}.svg`}/>
+          <img src={`/images/weather-icons/${day.icon}.svg`} alt={'weather icon'}/>
         </Cell>
         <Cell small={3}/>
         <Cell style={dayOfWeekHiLoStyle}>

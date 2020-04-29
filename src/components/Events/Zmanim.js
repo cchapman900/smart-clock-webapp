@@ -40,7 +40,7 @@ const Zmanim = () => {
     getSunData()
       .then((sunData) => {
         // Check if it's a Friday night
-        if (dayOfWeek !== 'Fr') {
+        if (dayOfWeek === 'Fr') {
           const candleLightingTime = getCandleLightingTime(sunData.results.sunset);
           eventsDispatch({type: 'set_candleLighting', time: candleLightingTime});
         }
@@ -105,13 +105,13 @@ const Zmanim = () => {
    *******************************************/
 
   const containerStyle = {
-    marginTop: '100px',
+    marginTop: events.length > 1 ? '70px' : '130px',
     marginRight: '30px',
     textAlign: 'right'
   };
 
   const doubleContainerStyle = {
-    marginBottom: '-150px'
+    marginBottom: '-170px'
   };
 
   const zmanimStyle = {

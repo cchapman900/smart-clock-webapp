@@ -1,43 +1,84 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useReducer, useEffect} from 'react';
 import moment from 'moment';
 
 import zmanimData from '../../data/zmanim'
 import {Cell, Grid} from "react-foundation";
-import testSunData from "../../data/test-sun-data";
+// import testSunData from "../../data/test-sun-data";
 import MoonPhase from "./MoonPhase";
+
+function eventReducer(state, action) {
+  switch (action.type) {
+    case 'set_candleLighting':
+      return [...state, {type: 'candleLighting', time: action.time}];
+    case 'set_nightfall':
+      return [...state, {type: 'nightfall', time: action.time}];
+    case 'set_omer':
+      return [...state, {type: 'omer', day: action.eventData.day}];
+    default:
+      throw new Error()
+  }
+}
 
 const Zmanim = () => {
 
-  const [event, setEvent] = useState(null);
+  /****************************************
+   * INITIALIZATION
+   ****************************************/
+
+  const [nightfall, setNightfall] = useState(null);
+
+  const [events, eventsDispatch] = useReducer(eventReducer, []);
+
+  /****************************************
+   * LIFECYCLE METHODS
+   ****************************************/
 
   useEffect(() => {
     const today = moment().format('Y-MM-DD');
     const dayOfWeek = moment().format('dd');
-    // If there's a record, show it
+
+    getSunData()
+      .then((sunData) => {
+        // Check if it's a Friday night
+        if (dayOfWeek !== 'Fr') {
+          const candleLightingTime = getCandleLightingTime(sunData.results.sunset);
+          eventsDispatch({type: 'set_candleLighting', time: candleLightingTime});
+        }
+        // Set nightfall
+        const nightfallTime = moment.utc(sunData.results.civil_twilight_end).local();
+        setNightfall(nightfallTime)
+      });
+
+    // If there's a record in the data, add it to the events state
     if (today in zmanimData) {
-      setEvent(zmanimData[today]);
-    }
-    // Or check to just default check sunset
-    else if (dayOfWeek === 'Fr') {
-      setSunset()
-    }
-  }, []);
-
-  /****************************************
-   * SETTER METHODS
-   ****************************************/
-
-  const setSunset = async () => {
-    const sunData = await getSunData();
-    if (sunData.status === 'OK') {
-      console.log(sunData);
-      const candleLighting = moment.utc(sunData.results.sunset).local().subtract(18, 'minute');
-      setEvent({
-        type: 'shabbosEvening',
-        candleLighting: candleLighting.format('h:mm')
+      zmanimData[today].forEach((event) => {
+        const {type, ...eventData} = event;
+        eventsDispatch({type: `set_${type}`, eventData});
       })
     }
-  };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+
+  /****************************************
+   * UTILITY METHODS
+   ****************************************/
+
+  /**
+   * Calculate 18 minutes from sunset from a timestamp
+   * @param sunset
+   * @returns {string}
+   */
+  function getCandleLightingTime(sunset) {
+    return moment.utc(sunset).local().subtract(18, 'minute').format('h:mm');
+  }
+
+  function getIsBeforeNightfall() {
+    if (nightfall) {
+      return moment.now() < nightfall
+    }
+  }
+
 
   /****************************************
    * HTTP METHODS
@@ -45,7 +86,6 @@ const Zmanim = () => {
 
   const getSunData = async () => {
     const apiUri = `https://api.sunrise-sunset.org/json?lat=${process.env.REACT_APP_LAT}&lng=${process.env.REACT_APP_LONG}&formatted=0`;
-    console.log(apiUri)
     return fetch(apiUri)
       .then((response) => {
         if (response.status === 200) {
@@ -64,65 +104,111 @@ const Zmanim = () => {
    * STYLES
    *******************************************/
 
+  const containerStyle = {
+    marginTop: '100px',
+    marginRight: '30px',
+    textAlign: 'right'
+  };
+
+  const doubleContainerStyle = {
+    marginBottom: '-150px'
+  };
+
   const zmanimStyle = {
-    'marginTop': '100px',
-    'marginRight': '30px',
-    'textAlign': 'right'
+    marginTop: '30px',
+  };
+
+  const omerStyle = {
+    marginTop: '-330px'
   };
 
   const eventTextStyle = {
-    'lineHeight': '170%',
-    'fontSize': '70px'
+    lineHeight: '170%',
+    fontSize: '70px'
   };
 
   /*******************************************
    * RENDER METHODS
    *******************************************/
 
-  const renderCandleLighting = () => {
+  function renderCandleLighting(time) {
     return (
       <Grid>
         <Cell small={8} style={eventTextStyle}>
-          {event.candleLighting}
+          {time}
         </Cell>
         <Cell small={4}>
           <img src={'/images/candle.svg'} alt={'candle'}/>
         </Cell>
       </Grid>
     )
-  };
+  }
 
-  const renderNightfall = () => {
+  function renderNightfall(time) {
     return (
       <Grid>
         <Cell small={8} style={eventTextStyle}>
-          {event.nightfall}
+          {time}
         </Cell>
         <Cell small={4}>
           <img src={'/images/weather-icons/wi-stars.svg'} alt={'stars'}/>
         </Cell>
       </Grid>
     )
-  };
+  }
 
-  const renderEvent = () => {
-    let eventContent = '';
+  function renderOmer(day) {
+    return (
+      <Grid className={'text-center'} style={events.length > 1 ? doubleContainerStyle : {marginBottom: '-50px'}}>
+        <Cell small={4}/>
+        <Cell small={6} style={eventTextStyle}>
+          <strong>{getIsBeforeNightfall() ? day - 1 : day}</strong>
+          <img src={'/images/omer.svg'} alt={'omer'} style={omerStyle}/>
+        </Cell>
+      </Grid>
+    )
+  }
 
-    if (event.type.includes('shabbosEvening')) {
-      eventContent = renderCandleLighting()
-    } else if (event.type.includes('shabbosDay')) {
-      eventContent = renderNightfall()
+  function renderEvent(event) {
+    let eventContent;
+
+    switch (event.type) {
+      case 'candleLighting':
+        eventContent = renderCandleLighting(event.time);
+        break;
+      case 'shabbosDay':
+        eventContent = renderNightfall(event.time);
+        break;
+      case 'omer':
+        eventContent = renderOmer(event.day);
+        break;
+      default:
+        eventContent = '';
     }
 
     return (
-      <div style={zmanimStyle}>
+      <div key={event.type} style={zmanimStyle}>
         {eventContent}
       </div>
     )
-  };
+  }
 
-  if (event) {
-    return renderEvent()
+  function renderEvents() {
+    const renderedEvents = (
+      events.map((event) => {
+        return renderEvent(event)
+      })
+    );
+
+    return (
+      <div style={containerStyle}>
+        {renderedEvents}
+      </div>
+    )
+  }
+
+  if (events && events.length > 0) {
+    return renderEvents()
   } else {
     return <MoonPhase/>
   }

@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useContext} from 'react';
 import {Cell, Grid} from "react-foundation";
 
-import testWeatherData from '../../data/test-weather.json'
+// import testWeatherData from '../../data/test-weather.json'
 import {WeatherContext} from "../../contexts/weather";
 import {temperatureDisplay} from '../../utils/weather';
 
@@ -16,7 +16,7 @@ const CurrentWeather = (props) => {
   const [currentTemp, setCurrentTemp] = useState(null);
   const [feelsLikeTemp, setFeelsLikeTemp] = useState(null);
   const [weatherIcon, setWeatherIcon] = useState(null);
-  const [chanceOfPrecip, setChanceOfPrecip] = useState(null);
+  // const [chanceOfPrecip, setChanceOfPrecip] = useState(null);
 
   /****************************************
    * LIFECYCLE METHODS
@@ -29,6 +29,7 @@ const CurrentWeather = (props) => {
       setWeatherIcon(weatherContext.forecast.currently.icon)
       // setChanceOfPrecip(weatherContext.forecast.daily.data[0].precipProbability)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [weatherContext.forecast]);
 
   /*******************************************
@@ -86,7 +87,7 @@ const CurrentWeather = (props) => {
   const renderWeather = () => {
     return(
       <div>
-        <img style={imageStyle} src={`/images/weather-icons/${weatherIcon}.svg`}/>
+        <img style={imageStyle} src={`/images/weather-icons/${weatherIcon}.svg`} alt={'weather icon'}/>
         {/*{Math.round(chanceOfPrecip * 100)}%*/}
       </div>
     )

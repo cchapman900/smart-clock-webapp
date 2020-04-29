@@ -1,198 +1,370 @@
 {
-  "2019-11-01": {
+  "2019-11-01": [{
     "type": ["shabbosEvening"],
     "candleLighting": "5:22"
-  },
-  "2019-11-02": {
-    "type": ["shabbosDay"],
+  }],
+  "2019-11-02": [{
+    "type": "shabbosDay",
     "nightfall": "6:22"
-  },
-  "2019-11-09": {
-    "type": ["shabbosDay"],
+  }],
+  "2019-11-09": [{
+    "type": "shabbosDay",
     "nightfall": "5:15"
-  },
-  "2019-11-16": {
-    "type": ["shabbosDay"],
+  }],
+  "2019-11-16": [{
+    "type": "shabbosDay",
     "nightfall": "5:09"
-  },
-  "2019-11-23": {
-    "type": ["shabbosDay"],
+  }],
+  "2019-11-23": [{
+    "type": "shabbosDay",
     "nightfall": "5:05"
-  },
-  "2019-11-30": {
-    "type": ["shabbosDay"],
+  }],
+  "2019-11-30": [{
+    "type": "shabbosDay",
     "nightfall": "5:02"
-  },
-  "2019-12-07": {
-    "type": ["shabbosDay"],
+  }],
+  "2019-12-07": [{
+    "type": "shabbosDay",
     "nightfall": "5:01"
-  },
-  "2019-12-14": {
-    "type": ["shabbosDay"],
+  }],
+  "2019-12-14": [{
+    "type": "shabbosDay",
     "nightfall": "5:02"
-  },
-  "2019-12-21": {
-    "type": ["shabbosDay"],
+  }],
+  "2019-12-21": [{
+    "type": "shabbosDay",
     "nightfall": "5:05"
-  },
-  "2019-12-28": {
-    "type": ["shabbosDay"],
+  }],
+  "2019-12-28": [{
+    "type": "shabbosDay",
     "nightfall": "5:09"
-  },
-  "2020-01-04": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-01-04": [{
+    "type": "shabbosDay",
     "nightfall": "5:14"
-  },
-  "2020-01-11": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-01-11": [{
+    "type": "shabbosDay",
     "nightfall": "5:21"
-  },
-  "2020-01-18": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-01-18": [{
+    "type": "shabbosDay",
     "nightfall": "5:28"
-  },
-  "2020-01-25": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-01-25": [{
+    "type": "shabbosDay",
     "nightfall": "5:36"
-  },
-  "2020-02-01": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-02-01": [{
+    "type": "shabbosDay",
     "nightfall": "5:44"
-  },
-  "2020-02-08": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-02-08": [{
+    "type": "shabbosDay",
     "nightfall": "5:53"
-  },
-  "2020-02-15": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-02-15": [{
+    "type": "shabbosDay",
     "nightfall": "6:01"
-  },
-  "2020-02-22": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-02-22": [{
+    "type": "shabbosDay",
     "nightfall": "6:09"
-  },
-  "2020-02-29": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-02-29": [{
+    "type": "shabbosDay",
     "nightfall": "6:17"
-  },
-  "2020-03-07": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-03-07": [{
+    "type": "shabbosDay",
     "nightfall": "6:25"
-  },
-  "2020-03-14": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-03-14": [{
+    "type": "shabbosDay",
     "nightfall": "7:33"
-  },
-  "2020-03-21": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-03-21": [{
+    "type": "shabbosDay",
     "nightfall": "7:41"
-  },
-  "2020-03-28": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-03-28": [{
+    "type": "shabbosDay",
     "nightfall": "7:49"
-  },
-  "2020-04-04": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-04-04": [{
+    "type": "shabbosDay",
     "nightfall": "7:58"
-  },
-  "2020-04-11": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-04-11": [{
+    "type": "shabbosDay",
     "nightfall": "8:06"
-  },
-  "2020-04-18": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-04-18": [{
+    "type": "shabbosDay",
     "nightfall": "8:15"
-  },
-  "2020-04-25": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-04-25": [{
+    "type": "shabbosDay",
     "nightfall": "8:23"
-  },
-  "2020-05-02": {
-    "type": ["shabbosDay"],
-    "nightfall": "8:32"
-  },
-  "2020-05-09": {
-    "type": ["shabbosDay"],
-    "nightfall": "8:41"
-  },
-  "2020-05-16": {
-    "type": ["shabbosDay"],
-    "nightfall": "8:49"
-  },
-  "2020-05-23": {
-    "type": ["shabbosDay"],
-    "nightfall": "8:57"
-  },
-  "2020-05-30": {
-    "type": ["shabbosDay"],
-    "nightfall": "9:04"
-  },
-  "2020-06-06": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-04-28": [
+    {
+      "type": "omer",
+      "day": 20
+    }
+  ],
+  "2020-04-29": [{
+    "type": "omer",
+    "day": 21
+  }],
+  "2020-04-30": [{
+    "type": "omer",
+    "day": 22
+  }],
+  "2020-05-01": [{
+    "type": "omer",
+    "day": 23
+  }],
+  "2020-05-02": [
+    {
+      "type": "shabbosDay",
+      "nightfall": "8:32"
+    },
+    {
+      "type": "omer",
+      "day": 24
+    }
+  ],
+  "2020-05-03": [{
+    "type": "omer",
+    "day": 25
+  }],
+  "2020-05-04": [{
+    "type": "omer",
+    "day": 26
+  }],
+  "2020-05-05": [
+    {
+      "type": "omer",
+      "day": 27
+    }
+  ],
+  "2020-05-06": [
+    {
+      "type": "omer",
+      "day": 28
+    }
+  ],
+  "2020-05-07": [
+    {
+      "type": "omer",
+      "day": 29
+    }
+  ],
+  "2020-05-08": [
+    {
+      "type": "omer",
+      "day": 30
+    }
+  ],
+  "2020-05-09": [
+    {
+      "type": "shabbosDay",
+      "nightfall": "8:41"
+    },
+    {
+      "type": "omer",
+      "day": 31
+    }
+  ],
+  "2020-05-10": [
+    {
+      "type": "omer",
+      "day": 32
+    }
+  ],
+  "2020-05-11": [
+    {
+      "type": "omer",
+      "day": 33
+    }
+  ],
+  "2020-05-12": [
+    {
+      "type": "omer",
+      "day": 34
+    }
+  ],
+  "2020-05-13": [
+    {
+      "type": "omer",
+      "day": 35
+    }
+  ],
+  "2020-05-14": [
+    {
+      "type": "omer",
+      "day": 36
+    }
+  ],
+  "2020-05-15": [
+    {
+      "type": "omer",
+      "day": 37
+    }
+  ],
+  "2020-05-16": [
+    {
+      "type": "shabbosDay",
+      "nightfall": "8:49"
+    },
+    {
+      "type": "omer",
+      "day": 38
+    }
+  ],
+  "2020-05-17": [
+    {
+      "type": "omer",
+      "day": 39
+    }
+  ],
+  "2020-05-18": [
+    {
+      "type": "omer",
+      "day": 40
+    }
+  ],
+  "2020-05-19": [
+    {
+      "type": "omer",
+      "day": 41
+    }
+  ],
+  "2020-05-20": [
+    {
+      "type": "omer",
+      "day": 42
+    }
+  ],
+  "2020-05-21": [
+    {
+      "type": "omer",
+      "day": 43
+    }
+  ],
+  "2020-05-22": [
+    {
+      "type": "omer",
+      "day": 44
+    }
+  ],
+  "2020-05-23": [
+    {
+      "type": "shabbosDay",
+      "nightfall": "8:57"
+    },
+    {
+      "type": "omer",
+      "day": 45
+    }
+  ],
+  "2020-05-24": [
+    {
+      "type": "omer",
+      "day": 46
+    }
+  ],
+  "2020-05-25": [
+    {
+      "type": "omer",
+      "day": 47
+    }
+  ],
+  "2020-05-26": [
+    {
+      "type": "omer",
+      "day": 48
+    }
+  ],
+  "2020-05-27": [
+    {
+      "type": "omer",
+      "day": 49
+    }
+  ],
+  "2020-05-30": [
+    {
+      "type": "shabbosDay",
+      "nightfall": "9:04"
+    }
+  ],
+  "2020-06-06": [{
+    "type": "shabbosDay",
     "nightfall": "9:10"
-  },
-  "2020-06-13": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-06-13": [{
+    "type": "shabbosDay",
     "nightfall": "9:13"
-  },
-  "2020-06-20": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-06-20": [{
+    "type": "shabbosDay",
     "nightfall": "9:16"
-  },
-  "2020-06-27": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-06-27": [{
+    "type": "shabbosDay",
     "nightfall": "9:13"
-  },
-  "2020-07-04": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-07-04": [{
+    "type": "shabbosDay",
     "nightfall": "9:15"
-  },
-  "2020-07-11": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-07-11": [{
+    "type": "shabbosDay",
     "nightfall": "9:11"
-  },
-  "2020-07-18": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-07-18": [{
+    "type": "shabbosDay",
     "nightfall": "9:06"
-  },
-  "2020-07-25": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-07-25": [{
+    "type": "shabbosDay",
     "nightfall": "8:59"
-  },
-  "2020-08-01": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-08-01": [{
+    "type": "shabbosDay",
     "nightfall": "8:50"
-  },
-  "2020-08-08": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-08-08": [{
+    "type": "shabbosDay",
     "nightfall": "8:41"
-  },
-  "2020-08-15": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-08-15": [{
+    "type": "shabbosDay",
     "nightfall": "8:30"
-  },
-  "2020-08-22": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-08-22": [{
+    "type": "shabbosDay",
     "nightfall": "8:18"
-  },
-  "2020-08-29": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-08-29": [{
+    "type": "shabbosDay",
     "nightfall": "8:06"
-  },
-  "2020-09-05": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-09-05": [{
+    "type": "shabbosDay",
     "nightfall": "7:54"
-  },
-  "2020-09-12": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-09-12": [{
+    "type": "shabbosDay",
     "nightfall": "7:41"
-  },
-  "2020-09-19": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-09-19": [{
+    "type": "shabbosDay",
     "nightfall": "7:29"
-  },
-  "2020-09-26": {
-    "type": ["shabbosDay"],
+  }],
+  "2020-09-26": [{
+    "type": "shabbosDay",
     "nightfall": "7:17"
-  }
+  }]
 }

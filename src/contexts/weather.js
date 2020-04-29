@@ -4,8 +4,7 @@ import moment from 'moment';
 
 export const WeatherContext = React.createContext({
   forecast: {},
-  getIsDaytime: () => {},
-  getIsBeforeSunset: () => {}
+  getIsDaytime: () => {}
 });
 
 export const WeatherContextProvider = props => {
@@ -50,14 +49,6 @@ export const WeatherContextProvider = props => {
     }
   }
 
-  function getIsBeforeSunset() {
-    if (forecast) {
-      const sunset = moment.unix(forecast.daily.data[0].sunsetTime);
-
-      return moment.now() < sunset
-    }
-  }
-
 
   /****************************************
    * LIFECYCLE METHODS
@@ -88,8 +79,7 @@ export const WeatherContextProvider = props => {
   return (
     <WeatherContext.Provider value={{
       forecast: forecast,
-      getIsDaytime: getIsDaytime,
-      getIsBeforeSunset: getIsBeforeSunset
+      getIsDaytime: getIsDaytime
     }}>
       {props.children}
     </WeatherContext.Provider>

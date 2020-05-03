@@ -10,8 +10,8 @@ function eventReducer(state, action) {
   switch (action.type) {
     case 'set_candleLighting':
       return [...state, {type: 'candleLighting', time: action.time}];
-    case 'set_nightfall':
-      return [...state, {type: 'nightfall', time: action.time}];
+    case 'set_shabbosDay':
+      return [...state, {type: 'shabbosDay', time: action.eventData.nightfall}];
     case 'set_omer':
       return [...state, {type: 'omer', day: action.eventData.day}];
     default:

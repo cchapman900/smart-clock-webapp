@@ -127,12 +127,12 @@
   }],
   "2020-05-02": [
     {
-      "type": "shabbosDay",
-      "nightfall": "8:32"
-    },
-    {
       "type": "omer",
       "day": 24
+    },
+    {
+      "type": "shabbosDay",
+      "nightfall": "8:32"
     }
   ],
   "2020-05-03": [{
@@ -169,12 +169,12 @@
   ],
   "2020-05-09": [
     {
-      "type": "shabbosDay",
-      "nightfall": "8:41"
-    },
-    {
       "type": "omer",
       "day": 31
+    },
+    {
+      "type": "shabbosDay",
+      "nightfall": "8:41"
     }
   ],
   "2020-05-10": [
@@ -215,12 +215,12 @@
   ],
   "2020-05-16": [
     {
-      "type": "shabbosDay",
-      "nightfall": "8:49"
-    },
-    {
       "type": "omer",
       "day": 38
+    },
+    {
+      "type": "shabbosDay",
+      "nightfall": "8:49"
     }
   ],
   "2020-05-17": [
@@ -261,12 +261,12 @@
   ],
   "2020-05-23": [
     {
-      "type": "shabbosDay",
-      "nightfall": "8:57"
-    },
-    {
       "type": "omer",
       "day": 45
+    },
+    {
+      "type": "shabbosDay",
+      "nightfall": "8:57"
     }
   ],
   "2020-05-24": [

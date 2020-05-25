@@ -14,12 +14,14 @@ function eventReducer(state, action) {
       return [...state, {type: 'shabbosDay', time: action.eventData.nightfall}];
     case 'set_omer':
       return [...state, {type: 'omer', day: action.eventData.day}];
+    case 'clear':
+      return []
     default:
       throw new Error()
   }
 }
 
-const Zmanim = () => {
+function Zmanim(props) {
 
   /****************************************
    * INITIALIZATION
@@ -34,6 +36,9 @@ const Zmanim = () => {
    ****************************************/
 
   useEffect(() => {
+    console.log('test')
+    eventsDispatch({type: 'clear'})
+    
     const today = moment().format('Y-MM-DD');
     const dayOfWeek = moment().format('dd');
 
@@ -57,7 +62,7 @@ const Zmanim = () => {
       })
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [moment(props.date).format('Y-MM-DD')]);
 
 
   /****************************************
@@ -119,7 +124,7 @@ const Zmanim = () => {
   };
 
   const omerStyle = {
-    marginTop: '-330px'
+    marginTop: '-300px'
   };
 
   const eventTextStyle = {
@@ -212,6 +217,6 @@ const Zmanim = () => {
   } else {
     return <MoonPhase/>
   }
-};
+}
 
 export default Zmanim;

@@ -1,20 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 // import { Textfit } from 'react-textfit';
 import moment from 'moment';
 
-const Clock = () => {
-  const [date, setDate] = useState(Date.now());
-
-  useEffect(() => {
-    const interval = () => {
-      setDate(Date.now())
-    };
-    setInterval(interval);
-
-    return () => {
-      clearInterval(interval)
-    };
-  }, []);
+function Clock(props) {
 
   /*******************************************
    * STYLES
@@ -39,17 +27,17 @@ const Clock = () => {
   return (
     <div>
       <div style={dateStyle}>
-        {moment(date).format('dddd | MMMM D, Y')}
+        {moment(props.date).format('dddd | MMMM D, Y')}
       </div>
       <hr/>
       {/*<Textfit mode="single" max={1000} style={{'lineHeight': '80%'}}>*/}
       {/*  12:55*/}
       {/*</Textfit>*/}
       <div style={timeStyle}>
-        {moment(date).format('h:mm')}
+        {moment(props.date).format('h:mm')}
       </div>
     </div>
   )
-};
+}
 
 export default Clock;

@@ -110,7 +110,7 @@ function Zmanim(props) {
    *******************************************/
 
   const containerStyle = {
-    marginTop: events.length > 1 ? '70px' : '130px',
+    marginTop: events.length > 1 ? '70px' : '80px',
     marginRight: '30px',
     textAlign: 'right'
   };
@@ -128,7 +128,7 @@ function Zmanim(props) {
   };
 
   const eventTextStyle = {
-    lineHeight: '170%',
+    // lineHeight: '170%',
     fontSize: '70px'
   };
 

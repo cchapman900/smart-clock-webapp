@@ -37,7 +37,7 @@ const CurrentWeather = (props) => {
    *******************************************/
 
   const currentWeatherStyle = {
-    'marginTop': '20px'
+    'marginTop': '10px'
   };
 
   const currentTempStyle = {

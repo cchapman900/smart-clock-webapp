@@ -17,7 +17,7 @@ function Clock(props) {
   const timeStyle = {
     'marginBottom': '30px',
     'fontSize': '220px',
-    'lineHeight': '80%'
+    'lineHeight': '70%'
   };
 
   /*******************************************

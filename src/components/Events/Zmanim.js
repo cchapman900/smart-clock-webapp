@@ -8,12 +8,19 @@ import MoonPhase from "./MoonPhase";
 
 function eventReducer(state, action) {
   switch (action.type) {
+    // Generated from a time
     case 'set_candleLighting':
       return [...state, {type: 'candleLighting', time: action.time}];
+    // Provided from zmanim.json
+    case 'set_yomTovEve':
+      return [...state, {type: 'candleLighting', time: action.eventData.candleLighting}];
     case 'set_shabbosDay':
-      return [...state, {type: 'shabbosDay', time: action.eventData.nightfall}];
+    case 'set_yomTovDay':
+      return [...state, {type: 'nightfall', time: action.eventData.nightfall}];
     case 'set_omer':
       return [...state, {type: 'omer', day: action.eventData.day}];
+    case 'set_cholHamoed':
+      return [...state, {type: 'cholHamoed', name: action.eventData.name}]
     case 'clear':
       return []
     default:
@@ -36,7 +43,6 @@ function Zmanim(props) {
    ****************************************/
 
   useEffect(() => {
-    console.log('test')
     eventsDispatch({type: 'clear'})
     
     const today = moment().format('Y-MM-DD');
@@ -174,6 +180,17 @@ function Zmanim(props) {
     )
   }
 
+  function renderCholHamoed(name) {
+    return (
+      <Grid>
+        <Cell small={3} style={eventTextStyle}/>
+        <Cell small={5}>
+          <img src={`/images/${name.toLowerCase()}.svg`} style={{}} alt={name.toLowerCase()}/>
+        </Cell>
+      </Grid>
+    )
+  }
+
   function renderEvent(event) {
     let eventContent;
 
@@ -181,11 +198,14 @@ function Zmanim(props) {
       case 'candleLighting':
         eventContent = renderCandleLighting(event.time);
         break;
-      case 'shabbosDay':
+      case 'nightfall':
         eventContent = renderNightfall(event.time);
         break;
       case 'omer':
         eventContent = renderOmer(event.day);
+        break;
+      case 'cholHamoed':
+        eventContent = renderCholHamoed(event.name);
         break;
       default:
         eventContent = '';

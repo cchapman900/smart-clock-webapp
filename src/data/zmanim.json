@@ -366,5 +366,51 @@
   "2020-09-26": [{
     "type": "shabbosDay",
     "nightfall": "7:38"
+  }],
+  "2020-09-27": [{
+      "type": "yomTovEve",
+      "candleLighting": "6:39",
+      "name": "Yom Kippur"
+  }],
+  "2020-09-28": [{
+    "type": "yomTovDay",
+    "nightfall": "7:35",
+    "name": "Yom Kippur"
+  }],
+  "2020-10-03": [{
+      "type": "yomTovEve",
+      "candleLighting": "7:27",
+      "name": "Sukkot"
+  }],
+  "2020-10-04": [{
+      "type": "yomTovDay",
+      "candleLighting": "7:25",
+      "name": "Sukkot"
+  }],
+  "2020-10-05": [{
+      "type": "cholHamoed",
+      "name": "Sukkot"
+  }],
+  "2020-10-06": [{
+      "type": "cholHamoed",
+      "name": "Sukkot"
+  }],
+  "2020-10-07": [{
+      "type": "cholHamoed",
+      "name": "Sukkot"
+  }],
+  "2020-10-08": [{
+      "type": "cholHamoed",
+      "name": "Sukkot"
+  }],
+  "2020-10-10": [{
+      "type": "yomTovEve",
+      "candleLighting": "7:16",
+      "name": "Simchat Torah"
+  }],
+  "2020-10-11": [{
+      "type": "yomTovDay",
+      "candleLighting": "7:15",
+      "name": "Sukkot"
   }]
 }

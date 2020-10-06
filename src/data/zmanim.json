@@ -412,5 +412,33 @@
       "type": "yomTovDay",
       "candleLighting": "7:15",
       "name": "Sukkot"
+  }],
+  "2020-10-17": [{
+    "type": "shabbosDay",
+    "nightfall": "7:06"
+  }],
+  "2020-10-24": [{
+    "type": "shabbosDay",
+    "nightfall": "6:57"
+  }],
+  "2020-10-31": [{
+    "type": "shabbosDay",
+    "nightfall": "6:49"
+  }],
+  "2020-11-07": [{
+    "type": "shabbosDay",
+    "nightfall": "5:42"
+  }],
+  "2020-11-14": [{
+    "type": "shabbosDay",
+    "nightfall": "5:37"
+  }],
+  "2020-11-21": [{
+    "type": "shabbosDay",
+    "nightfall": "5:33"
+  }],
+  "2020-11-28": [{
+    "type": "shabbosDay",
+    "nightfall": "5:30"
   }]
 }

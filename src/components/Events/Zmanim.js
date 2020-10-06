@@ -116,7 +116,7 @@ function Zmanim(props) {
    *******************************************/
 
   const containerStyle = {
-    marginTop: events.length > 1 ? '70px' : '80px',
+    marginTop: '70px',
     marginRight: '30px',
     textAlign: 'right'
   };
@@ -183,8 +183,8 @@ function Zmanim(props) {
   function renderCholHamoed(name) {
     return (
       <Grid>
-        <Cell small={3} style={eventTextStyle}/>
-        <Cell small={5}>
+        <Cell small={2} style={eventTextStyle}/>
+        <Cell small={7}>
           <img src={`/images/${name.toLowerCase()}.svg`} style={{}} alt={name.toLowerCase()}/>
         </Cell>
       </Grid>

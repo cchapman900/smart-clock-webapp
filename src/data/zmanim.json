@@ -440,5 +440,72 @@
   "2020-11-28": [{
     "type": "shabbosDay",
     "nightfall": "5:30"
+  }],
+  "2020-12-13": [{
+    "type": "chanukah",
+    "candles": 4
+  }],
+  "2020-12-14": [{
+    "type": "chanukah",
+    "candles": 5
+  }],
+  "2020-12-15": [{
+    "type": "chanukah",
+    "candles": 6
+  }],
+  "2020-12-16": [{
+    "type": "chanukah",
+    "candles": 7
+  }],
+  "2020-12-17": [{
+    "type": "chanukah",
+    "candles": 8
+  }],
+  "2020-12-19": [{
+    "type": "shabbosDay",
+    "nightfall": "5:33"
+  }],
+  "2020-12-26": [{
+    "type": "shabbosDay",
+    "nightfall": "5:37"
+  }],
+  "2021-01-02": [{
+    "type": "shabbosDay",
+    "nightfall": "5:42"
+  }],
+  "2021-01-09": [{
+    "type": "shabbosDay",
+    "nightfall": "5:48"
+  }],
+  "2021-01-16": [{
+    "type": "shabbosDay",
+    "nightfall": "5:55"
+  }],
+  "2021-01-23": [{
+    "type": "shabbosDay",
+    "nightfall": "6:02"
+  }],
+  "2021-01-30": [{
+    "type": "shabbosDay",
+    "nightfall": "6:09"
+  }],
+  "2021-02-06": [{
+    "type": "shabbosDay",
+    "nightfall": "6:17"
+  }],
+  "2021-02-13": [{
+    "type": "shabbosDay",
+    "nightfall": "6:24"
+  }],
+  "2021-02-20": [{
+    "type": "shabbosDay",
+    "nightfall": "6:32"
+  }],
+  "2021-02-26": [{
+    "type": "purim"
+  }],
+  "2021-02-27": [{
+    "type": "shabbosDay",
+    "nightfall": "6:39"
   }]
 }

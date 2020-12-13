@@ -21,6 +21,10 @@ function eventReducer(state, action) {
       return [...state, {type: 'omer', day: action.eventData.day}];
     case 'set_cholHamoed':
       return [...state, {type: 'cholHamoed', name: action.eventData.name}]
+    case 'set_chanukah':
+      return [...state, {type: 'chanukah', candles: action.eventData.candles}]
+    case 'set_purim':
+      return [...state, {type: 'purim'}]
     case 'clear':
       return []
     default:
@@ -191,6 +195,28 @@ function Zmanim(props) {
     )
   }
 
+  function renderChanukah(candles) {
+    return (
+      <Grid>
+        <Cell small={2} style={eventTextStyle}/>
+        <Cell small={7}>
+          <img src={`/images/chanukah-${candles}.svg`} alt={`Chanukah - ${candles} candles`}/>
+        </Cell>
+      </Grid>
+    )
+  }
+
+  function renderPurim() {
+    return (
+      <Grid>
+        <Cell small={2} style={eventTextStyle}/>
+        <Cell small={7}>
+          <img src={`/images/purim.svg`} alt='Purim'/>
+        </Cell>
+      </Grid>
+    )
+  }
+
   function renderEvent(event) {
     let eventContent;
 
@@ -206,6 +232,12 @@ function Zmanim(props) {
         break;
       case 'cholHamoed':
         eventContent = renderCholHamoed(event.name);
+        break;
+      case 'chanukah':
+        eventContent = renderChanukah(event.candles);
+        break;
+      case 'purim':
+        eventContent = renderPurim();
         break;
       default:
         eventContent = '';

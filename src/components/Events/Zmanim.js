@@ -173,8 +173,9 @@ function Zmanim(props) {
   }
 
   function renderOmer(day) {
+    console.log(events.length)
     return (
-      <Grid className={'text-center'} style={events.length > 1 ? doubleContainerStyle : {marginBottom: '-50px'}}>
+      <Grid className={'text-center'} style={events.length > 1 ? doubleContainerStyle : {paddingTop: '40px', marginBottom: '-50px'}}>
         <Cell small={4}/>
         <Cell small={6} style={eventTextStyle}>
           <strong>{getIsBeforeNightfall() ? day - 1 : day}</strong>

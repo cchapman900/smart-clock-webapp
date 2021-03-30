@@ -700,46 +700,357 @@
         "nightfall":"8:08"
      }
   ],
+  "2021-03-28":[
+     {
+        "type":"omer",
+        "day":1
+     },
+     {
+      "type":"yomTovEve",
+      "candleLighting":"8:07",
+      "name":"Pesach"
+      }
+  ],
+  "2021-03-29":[
+     {
+        "type":"omer",
+        "day":2
+     },
+     {
+      "type":"yomTovEve",
+      "candleLighting":"8:07",
+      "name":"Pesach"
+      }
+  ],
+  "2021-03-30":[
+     {
+        "type":"omer",
+        "day":3
+     }
+  ],
+  "2021-03-31":[
+     {
+        "type":"omer",
+        "day":4
+     }
+  ],
+  "2021-04-01":[
+     {
+        "type":"omer",
+        "day":5
+     }
+  ],
+  "2021-04-02":[
+     {
+        "type":"omer",
+        "day":6
+     }
+  ],
   "2021-04-03":[
+      {
+         "type":"omer",
+         "day":7
+      },
      {
         "type":"shabbosDay",
         "nightfall":"8:15"
      }
   ],
+  "2021-04-04":[
+     {
+        "type":"omer",
+        "day":8
+     }
+  ],
+  "2021-04-05":[
+     {
+        "type":"omer",
+        "day":9
+     }
+  ],
+  "2021-04-06":[
+     {
+        "type":"omer",
+        "day":10
+     }
+  ],
+  "2021-04-07":[
+     {
+        "type":"omer",
+        "day":11
+     }
+  ],
+  "2021-04-08":[
+     {
+        "type":"omer",
+        "day":12
+     }
+  ],
+  "2021-04-09":[
+     {
+        "type":"omer",
+        "day":13
+     }
+  ],
   "2021-04-10":[
+   {
+      "type":"omer",
+      "day":14
+   },
      {
         "type":"shabbosDay",
         "nightfall":"8:22"
      }
   ],
+  "2021-04-11":[
+     {
+        "type":"omer",
+        "day":15
+     }
+  ],
+  "2021-04-12":[
+     {
+        "type":"omer",
+        "day":16
+     }
+  ],
+  "2021-04-13":[
+     {
+        "type":"omer",
+        "day":17
+     }
+  ],
+  "2021-04-14":[
+     {
+        "type":"omer",
+        "day":18
+     }
+  ],
+  "2021-04-15":[
+     {
+        "type":"omer",
+        "day":19
+     }
+  ],
+  "2021-04-16":[
+     {
+        "type":"omer",
+        "day":20
+     }
+  ],
   "2021-04-17":[
+   {
+      "type":"omer",
+      "day":21
+   },
      {
         "type":"shabbosDay",
         "nightfall":"8:30"
      }
   ],
+  "2021-04-18":[
+     {
+        "type":"omer",
+        "day":22
+     }
+  ],
+  "2021-04-19":[
+     {
+        "type":"omer",
+        "day":23
+     }
+  ],
+  "2021-04-20":[
+     {
+        "type":"omer",
+        "day":24
+     }
+  ],
+  "2021-04-21":[
+     {
+        "type":"omer",
+        "day":25
+     }
+  ],
+  "2021-04-22":[
+     {
+        "type":"omer",
+        "day":26
+     }
+  ],
+  "2021-04-23":[
+     {
+        "type":"omer",
+        "day":27
+     }
+  ],
   "2021-04-24":[
+   {
+      "type":"omer",
+      "day":28
+   },
      {
         "type":"shabbosDay",
         "nightfall":"8:37"
      }
   ],
+  "2021-04-25":[
+     {
+        "type":"omer",
+        "day":29
+     }
+  ],
+  "2021-04-26":[
+     {
+        "type":"omer",
+        "day":30
+     }
+  ],
+  "2021-04-27":[
+     {
+        "type":"omer",
+        "day":31
+     }
+  ],
+  "2021-04-28":[
+     {
+        "type":"omer",
+        "day":32
+     }
+  ],
+  "2021-04-29":[
+     {
+        "type":"omer",
+        "day":33
+     }
+  ],
+  "2021-04-30":[
+     {
+        "type":"omer",
+        "day":34
+     }
+  ],
   "2021-05-01":[
+   {
+      "type":"omer",
+      "day":35
+   },
      {
         "type":"shabbosDay",
         "nightfall":"8:45"
      }
   ],
+  "2021-05-02":[
+     {
+        "type":"omer",
+        "day":36
+     }
+  ],
+  "2021-05-03":[
+     {
+        "type":"omer",
+        "day":37
+     }
+  ],
+  "2021-05-04":[
+     {
+        "type":"omer",
+        "day":38
+     }
+  ],
+  "2021-05-05":[
+     {
+        "type":"omer",
+        "day":39
+     }
+  ],
+  "2021-05-06":[
+     {
+        "type":"omer",
+        "day":40
+     }
+  ],
+  "2021-05-07":[
+     {
+        "type":"omer",
+        "day":41
+     }
+  ],
   "2021-05-08":[
+   {
+      "type":"omer",
+      "day":42
+   },
      {
         "type":"shabbosDay",
         "nightfall":"8:53"
      }
   ],
+  "2021-05-09":[
+     {
+        "type":"omer",
+        "day":43
+     }
+  ],
+  "2021-05-10":[
+     {
+        "type":"omer",
+        "day":44
+     }
+  ],
+  "2021-05-11":[
+     {
+        "type":"omer",
+        "day":45
+     }
+  ],
+  "2021-05-12":[
+     {
+        "type":"omer",
+        "day":46
+     }
+  ],
+  "2021-05-13":[
+     {
+        "type":"omer",
+        "day":47
+     }
+  ],
+  "2021-05-14":[
+     {
+        "type":"omer",
+        "day":48
+     }
+  ],
   "2021-05-15":[
+   {
+      "type":"omer",
+      "day":49
+   },
      {
         "type":"shabbosDay",
         "nightfall":"9:00"
+     }
+  ],
+  "2021-05-16":[
+     {
+        "type":"yomTovEve",
+        "candleLighting":"7:58",
+        "name":"Shavuot"
+     }
+  ],
+  "2021-05-17":[
+     {
+        "type":"yomTovDay",
+        "nightfall":"9:02",
+        "name":"Shavuot"
+     }
+  ],
+  "2021-05-18":[
+     {
+        "type":"yomTovDay",
+        "nightfall":"9:03",
+        "name":"Shavuot"
      }
   ],
   "2021-05-22":[

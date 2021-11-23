@@ -49,8 +49,13 @@ function Zmanim(props) {
   useEffect(() => {
     eventsDispatch({type: 'clear'})
     
-    const today = moment().format('Y-MM-DD');
-    const dayOfWeek = moment().format('dd');
+    /** Date Override */
+    const now = moment();
+    // const now = moment("20211204", "YYYYMMDD")
+
+    const today = now.format('Y-MM-DD');
+    const dayOfWeek = now.format('dd');
+    console.log(dayOfWeek)
 
     getSunData()
       .then((sunData) => {
@@ -173,7 +178,6 @@ function Zmanim(props) {
   }
 
   function renderOmer(day) {
-    console.log(events.length)
     return (
       <Grid className={'text-center'} style={events.length > 1 ? doubleContainerStyle : {paddingTop: '40px', marginBottom: '-50px'}}>
         <Cell small={4}/>
@@ -196,12 +200,18 @@ function Zmanim(props) {
     )
   }
 
+
+  /**
+   * @param {number} candles - How many candles will be lit in the evening
+   * @returns 
+   */
   function renderChanukah(candles) {
+    const candlesToDisplay = getIsBeforeNightfall() ? candles - 1 : candles
     return (
-      <Grid>
-        <Cell small={2} style={eventTextStyle}/>
-        <Cell small={7}>
-          <img src={`/images/chanukah-${candles}.svg`} alt={`Chanukah - ${candles} candles`}/>
+      <Grid className={'text-center'} style={ events.length > 1 ? {marginTop: -50} : {} }>
+        <Cell small={events.length > 1 ? 4 : 2} style={eventTextStyle}/>
+        <Cell small={events.length > 1 ? 4 : 7}>
+          <img src={`/images/chanukah-${candlesToDisplay}.svg`} alt={`Chanukah - ${candlesToDisplay} candles`}/>
         </Cell>
       </Grid>
     )

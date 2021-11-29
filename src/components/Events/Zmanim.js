@@ -206,7 +206,7 @@ function Zmanim(props) {
    * @returns 
    */
   function renderChanukah(candles) {
-    const candlesToDisplay = getIsBeforeNightfall() ? candles - 1 : candles
+    const candlesToDisplay = getIsBeforeNightfall() ? candles : candles + 1;
     return (
       <Grid className={'text-center'} style={ events.length > 1 ? {marginTop: -50} : {} }>
         <Cell small={events.length > 1 ? 4 : 2} style={eventTextStyle}/>

@@ -1221,34 +1221,40 @@
         "nightfall":"5:31"
      }
   ],
+  "2021-11-28": [
+      {
+         "type":"chanukah",
+         "candles":1
+      }
+   ],
    "2021-11-29": [
        {
           "type":"chanukah",
-          "candles":1
+          "candles":2
        }
     ],
    "2021-11-30": [
         {
            "type":"chanukah",
-           "candles":2
+           "candles":3
         }
    ],
    "2021-12-01": [
       {
          "type":"chanukah",
-         "candles":3
+         "candles":4
       }
    ],
    "2021-12-02": [
       {
          "type":"chanukah",
-         "candles":4
+         "candles":5
       }
    ],
    "2021-12-03": [
       {
          "type":"chanukah",
-         "candles":5
+         "candles":6
       }
    ],
   "2021-12-04":[
@@ -1258,16 +1264,10 @@
      },
      {
         "type":"chanukah",
-        "candles":6
-     }
-  ],
-  "2021-12-05": [
-     {
-        "type":"chanukah",
         "candles":7
      }
   ],
-  "2021-12-06": [
+  "2021-12-05": [
      {
         "type":"chanukah",
         "candles":8

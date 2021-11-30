@@ -206,12 +206,11 @@ function Zmanim(props) {
    * @returns 
    */
   function renderChanukah(candles) {
-    const candlesToDisplay = getIsBeforeNightfall() ? candles : candles + 1;
     return (
       <Grid className={'text-center'} style={ events.length > 1 ? {marginTop: -50} : {} }>
         <Cell small={events.length > 1 ? 4 : 2} style={eventTextStyle}/>
         <Cell small={events.length > 1 ? 4 : 7}>
-          <img src={`/images/chanukah-${candlesToDisplay}.svg`} alt={`Chanukah - ${candlesToDisplay} candles`}/>
+          <img src={`/images/chanukah-${candles}${getIsBeforeNightfall() && '-unlit'}.svg`} alt={`Chanukah - ${candles} candles`}/>
         </Cell>
       </Grid>
     )

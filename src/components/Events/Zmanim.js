@@ -210,7 +210,7 @@ function Zmanim(props) {
       <Grid className={'text-center'} style={ events.length > 1 ? {marginTop: -50} : {} }>
         <Cell small={events.length > 1 ? 4 : 2} style={eventTextStyle}/>
         <Cell small={events.length > 1 ? 4 : 7}>
-          <img src={`/images/chanukah-${candles}${getIsBeforeNightfall() && '-unlit'}.svg`} alt={`Chanukah - ${candles} candles`}/>
+          <img src={`/images/chanukah-${candles}${getIsBeforeNightfall() ? '-unlit' : ''}.svg`} alt={`Chanukah - ${candles} candles`}/>
         </Cell>
       </Grid>
     )

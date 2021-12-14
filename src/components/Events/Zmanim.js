@@ -17,6 +17,8 @@ function eventReducer(state, action) {
     case 'set_shabbosDay':
     case 'set_yomTovDay':
       return [...state, {type: 'nightfall', time: action.eventData.nightfall}];
+    case 'set_fast':
+      return [...state, {type: 'fast', time: action.eventData.time}];
     case 'set_omer':
       return [...state, {type: 'omer', day: action.eventData.day}];
     case 'set_cholHamoed':
@@ -177,6 +179,25 @@ function Zmanim(props) {
     )
   }
 
+  /**
+   * @param {*} time - When the fast is over
+   * @returns 
+   */
+  function renderFast(time) {
+    return (
+      <Grid>
+        <Cell small={7} style={eventTextStyle}>
+          {time}
+        </Cell>
+        <Cell small={1}>
+        </Cell>
+        <Cell small={4}>
+          <img src={'/images/fast.svg'} alt={'fast'}/>
+        </Cell>
+      </Grid>
+    )
+  }
+
   function renderOmer(day) {
     return (
       <Grid className={'text-center'} style={events.length > 1 ? doubleContainerStyle : {paddingTop: '40px', marginBottom: '-50px'}}>
@@ -236,6 +257,9 @@ function Zmanim(props) {
         break;
       case 'nightfall':
         eventContent = renderNightfall(event.time);
+        break;
+      case 'fast':
+        eventContent = renderFast(event.time);
         break;
       case 'omer':
         eventContent = renderOmer(event.day);

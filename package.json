@@ -9,7 +9,7 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-foundation": "^0.9.6",
-    "react-scripts": "^3.4.1",
+    "react-scripts": "^5.0.1",
     "react-textfit": "^1.1.0",
     "victory": "^33.1.1"
   },

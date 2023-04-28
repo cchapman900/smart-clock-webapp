@@ -76,7 +76,7 @@ const Forecast = (props) => {
       setHourlyPrecipProbability(normalizedPrecipProbs);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [weatherContext.forecast ? weatherContext.forecast.hourly.data[0] : null]);
+  }, [weatherContext.forecast && weatherContext.forecast.hourly ? weatherContext.forecast.hourly.data[0] : null]);
 
   useEffect( () => {
     if (weatherContext.forecast) {

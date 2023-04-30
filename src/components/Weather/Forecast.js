@@ -25,7 +25,7 @@ const Forecast = (props) => {
    ****************************************/
 
   useEffect( () => {
-    if (weatherContext.forecast) {
+    if (weatherContext.forecast && weatherContext.forecast.hourly) {
       const hours = parseInt(moment().format('k'));
       let temps = [];
       let precipProbs = [];
@@ -79,7 +79,7 @@ const Forecast = (props) => {
   }, [weatherContext.forecast && weatherContext.forecast.hourly ? weatherContext.forecast.hourly.data[0] : null]);
 
   useEffect( () => {
-    if (weatherContext.forecast) {
+    if (weatherContext.forecast && weatherContext.forecast.hourly) {
       let newDailyForecast = [];
       for (let i = 0; i < 6; i++) {
         const dailyWeather = weatherContext.forecast.daily.data[i];
@@ -88,7 +88,7 @@ const Forecast = (props) => {
       setDailyForecast(newDailyForecast);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [weatherContext.forecast ? weatherContext.forecast.daily.data[0] : null]);
+  }, [weatherContext.forecast && weatherContext.forecast.hourly ? weatherContext.forecast.daily.data[0] : null]);
 
 
   /****************************************

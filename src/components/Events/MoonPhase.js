@@ -18,7 +18,7 @@ const MoonPhase = (props) => {
    ****************************************/
 
   useEffect( () => {
-    if (weatherContext.forecast) {
+    if (weatherContext.forecast && weatherContext.forecast.daily) {
       const moonPhase = Math.round(weatherContext.forecast.daily.data[0].moonPhase * 27);
       setMoonPhaseIcon(moonPhase)
     }

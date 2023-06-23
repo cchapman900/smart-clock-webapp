@@ -17,7 +17,7 @@ const Weather = () => {
    ****************************************/
 
   // const getWeatherForecast = async () => {
-  //   // const apiUri = `http://192.168.0.121:3010/weather?lat=${process.env.REACT_APP_LAT}&long=${process.env.REACT_APP_LONG}`;
+  //   // const apiUri = `http://${process.env.REACT_APP_API_IP_ADDRESS}:${process.env.REACT_APP_API_PORT}/weather?lat=${process.env.REACT_APP_LAT}&long=${process.env.REACT_APP_LONG}`;
   //   // console.log(apiUri);
   //   // return fetch(apiUri)
   //   //   .then((response) => {

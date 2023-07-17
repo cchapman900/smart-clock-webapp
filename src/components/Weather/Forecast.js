@@ -88,7 +88,7 @@ const Forecast = (props) => {
       setDailyForecast(newDailyForecast);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [weatherContext.forecast && weatherContext.forecast.hourly ? weatherContext.forecast.daily.data[0] : null]);
+  }, [weatherContext.forecast && weatherContext.forecast.daily ? weatherContext.forecast.daily.data[0] : null]);
 
 
   /****************************************

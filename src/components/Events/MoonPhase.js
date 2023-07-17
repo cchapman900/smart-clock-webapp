@@ -23,7 +23,7 @@ const MoonPhase = (props) => {
       setMoonPhaseIcon(moonPhase)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [weatherContext.forecast ? weatherContext.forecast.daily.data[0].time : null]);
+  }, [weatherContext.forecast && weatherContext.forecast.daily ? weatherContext.forecast.daily.data[0].time : null]);
 
   /*******************************************
    * STYLES

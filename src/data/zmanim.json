@@ -2337,27 +2337,17 @@
           "name":"Sukkot"
        }
     ],
-    "2023-10-06":[
-      {
-         "type":"yomTovEve",
-         "candleLighting":"6:17",
-         "name":"Simchat Torah"
-      }
-    ],
     "2023-10-07": [
       {
          "type":"yomTovDay",
-         "candleLighting":"7:14",
-         "name":"Sukkot"
-      },
-      {
-        "nightfall": "7:22",
-        "type": "shabbosDay"
+         "nightfall":"7:14",
+         "name":"Simchat Torah"
       }
     ],
     "2023-10-08": [
       {
          "type":"yomTovDay",
+         "nightfall":"7:12",
          "name":"Sukkot"
       }
     ],

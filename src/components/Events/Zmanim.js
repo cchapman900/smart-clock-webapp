@@ -53,7 +53,7 @@ function Zmanim(props) {
     
     /** Date Override */
     const now = moment();
-    // const now = moment("20211204", "YYYYMMDD")
+    // const now = moment("20231008", "YYYYMMDD")
 
     const today = now.format('Y-MM-DD');
     const dayOfWeek = now.format('dd');

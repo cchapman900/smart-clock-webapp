@@ -513,26 +513,6 @@
         "name":"Sukkot"
      }
   ],
-  "2020-10-08":[
-     {
-        "type":"cholHamoed",
-        "name":"Sukkot"
-     }
-  ],
-  "2020-10-10":[
-     {
-        "type":"yomTovEve",
-        "candleLighting":"7:16",
-        "name":"Simchat Torah"
-     }
-  ],
-  "2020-10-11":[
-     {
-        "type":"yomTovDay",
-        "candleLighting":"7:15",
-        "name":"Sukkot"
-     }
-  ],
   "2020-10-17":[
      {
         "type":"shabbosDay",
@@ -2327,10 +2307,58 @@
         "type": "shabbosDay"
       }
     ],
+    "2023-10-01":[
+       {
+          "type":"cholHamoed",
+          "name":"Sukkot"
+       }
+    ],
+    "2023-10-02":[
+       {
+          "type":"cholHamoed",
+          "name":"Sukkot"
+       }
+    ],
+    "2023-10-03":[
+       {
+          "type":"cholHamoed",
+          "name":"Sukkot"
+       }
+    ],
+    "2023-10-04":[
+       {
+          "type":"cholHamoed",
+          "name":"Sukkot"
+       }
+    ],
+    "2023-10-05":[
+       {
+          "type":"cholHamoed",
+          "name":"Sukkot"
+       }
+    ],
+    "2023-10-06":[
+      {
+         "type":"yomTovEve",
+         "candleLighting":"6:17",
+         "name":"Simchat Torah"
+      }
+    ],
     "2023-10-07": [
       {
-        "nightfall": "7:14",
+         "type":"yomTovDay",
+         "candleLighting":"7:14",
+         "name":"Sukkot"
+      },
+      {
+        "nightfall": "7:22",
         "type": "shabbosDay"
+      }
+    ],
+    "2023-10-08": [
+      {
+         "type":"yomTovDay",
+         "name":"Sukkot"
       }
     ],
     "2023-10-14": [

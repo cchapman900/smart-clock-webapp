@@ -57,7 +57,7 @@ function Zmanim(props) {
 
     const today = now.format('Y-MM-DD');
     const dayOfWeek = now.format('dd');
-    console.log(dayOfWeek)
+    // console.log(dayOfWeek)
 
     getSunData()
       .then((sunData) => {
@@ -97,7 +97,7 @@ function Zmanim(props) {
 
   function getIsBeforeNightfall() {
     if (nightfall) {
-      return moment.now() < nightfall
+      return moment.unix() < nightfall
     }
   }
 
